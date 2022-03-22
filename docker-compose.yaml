@@ -1,0 +1,31 @@
+version: "3.9"
+services:
+  cms:
+    build: ${PWD}/docker/cms
+    container_name: cms
+    hostname: cms
+    tty: true
+    volumes:
+      - ./cms:/app/
+    ports:
+      - "1337:1337"
+    depends_on:
+      - postgres_db
+
+  postgres_db:
+    container_name: postgres_db
+    hostname: postgres_db
+    image: postgres:14.2-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=cms-admin
+      - POSTGRES_PASSWORD=cms-admin-password
+      - POSTGRES_DB=cms
+    ports:
+      - "5438:5432"
+    volumes:
+      - db:/var/lib/postgresql/data
+
+volumes:
+  db:
+    driver: local
