@@ -9,6 +9,9 @@ install:
 start:
 	docker-compose up -d
 
+stop:
+	docker-compose down
+
 cms_shell:
 	docker exec -ti cms zsh
 
