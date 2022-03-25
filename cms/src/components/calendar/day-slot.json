@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_calendar_day_slots",
+  "info": {
+    "displayName": "DaySlot",
+    "icon": "calendar-day",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "date": {
+      "type": "date"
+    },
+    "starts": {
+      "type": "time"
+    },
+    "ends": {
+      "type": "time"
+    }
+  }
+}
