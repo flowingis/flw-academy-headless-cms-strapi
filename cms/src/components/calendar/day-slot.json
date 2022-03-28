@@ -8,13 +8,16 @@
   "options": {},
   "attributes": {
     "date": {
-      "type": "date"
+      "type": "date",
+      "required": true
     },
     "starts": {
-      "type": "time"
+      "type": "time",
+      "required": true
     },
     "ends": {
-      "type": "time"
+      "type": "time",
+      "required": true
     }
   }
 }

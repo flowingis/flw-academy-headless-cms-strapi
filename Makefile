@@ -4,6 +4,7 @@ install:
 	docker-compose rm -v --force
 	docker-compose up -d --force-recreate
 	docker exec -ti cms yarn install
+	docker exec -ti site npm install
 	docker-compose stop
 
 start:
@@ -21,5 +22,17 @@ cms_dev:
 cms_build:
 	docker exec -ti cms npm run build
 
-cms_start:
-	docker exec -ti cms npm run start
+site_start:
+	docker exec -ti site npm run start
+
+site_shell:
+	docker exec -ti site zsh
+
+site_dev:
+	docker exec -ti site npm run dev -- --host
+
+site_build:
+	docker exec -ti site npm run build
+
+site_start:
+	docker exec -ti site npm run start

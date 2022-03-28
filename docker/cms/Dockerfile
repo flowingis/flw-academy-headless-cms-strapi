@@ -1,5 +1,5 @@
 
-FROM node:14
+FROM node:14.19.1
 
 # install zsh
 RUN ["apt-get", "update"]
@@ -16,6 +16,6 @@ RUN git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUS
 RUN git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 RUN git clone https://github.com/buonomo/yarn-completion ~/.oh-my-zsh/custom/plugins/yarn-completion
 
-ADD ./zshrc /home/node/.zshrc
+ADD ./zshrc /home/root/.zshrc
 
 CMD ["zsh"]
