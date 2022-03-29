@@ -25,12 +25,6 @@
       "type": "string",
       "required": true
     },
-    "posts": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::post.post",
-      "mappedBy": "post_category"
-    },
     "tag": {
       "pluginOptions": {
         "i18n": {
@@ -38,6 +32,12 @@
         }
       },
       "type": "string"
+    },
+    "posts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::post.post",
+      "inversedBy": "post_categories"
     }
   }
 }
